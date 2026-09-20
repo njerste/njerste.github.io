@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美少女战士月野兔 - 经典动漫角色深度解析、角色经历回顾、经典台词摘录及粉丝同人作品鉴赏。了解水手月亮的起源、变身咒语与故事背景。">
+    <meta name="keywords" content="美少女战士月野兔,水手月亮,月野兔,动漫角色,水冰月,经典台词">
+    <title>美少女战士月野兔 - 角色解析与经典回忆</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-pink: #ff69b4;
+            --deep-purple: #4b0082;
+            --light-pink: #ffe6f2;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--deep-purple), var(--primary-pink));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--light-pink);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, var(--light-pink) 0%, #fff 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-pink);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--deep-purple);
+            text-shadow: 2px 2px 0px rgba(255, 105, 180, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 105, 180, 0.1);
+            color: var(--primary-pink);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-pink);
+        }
+
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-pink);
+            color: var(--deep-purple);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .intro-text {
+            text-indent: 2em;
+            margin-bottom: 15px;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .char-item {
+            text-align: center;
+        }
+
+        .char-avatar {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .char-name {
+            font-weight: bold;
+            color: var(--deep-purple);
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-pink);
+            border-bottom: 2px solid var(--light-pink);
+            padding-bottom: 10px;
+        }
+
+        .quote-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .quote-list li::before {
+            content: "“";
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 1.5rem;
+            color: var(--primary-pink);
+            opacity: 0.5;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .quote-author {
+            display: block;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-purple);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            opacity: 0.7;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>✦</span> Sailor Moon
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">角色档案</a></li>
+                    <li><a href="#">经典台词</a></li>
+                    <li><a href="#">变身咒语</a></li>
+                    <li><a href="#">粉丝鉴赏</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>美少女战士月野兔</h1>
+            <p>从平凡初中生到拯救世界的月之冕冕者。探索水手月亮的成长历程、经典语录以及她如何用爱与勇气守护地球。</p>
+            <div class="hero-tags">
+                <span class="tag">水手月亮</span>
+                <span class="tag">月野兔</span>
+                <span class="tag">爱与正义</span>
+                <span class="tag">经典动漫</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-grid">
+        <!-- Left Column -->
+        <div class="content-area">
+            
+            <section>
+                <h2 class="section-title">角色背景与起源</h2>
+                <article class="card">
+                    <p class="intro-text">
+                        月野兔（Tsukino Usagi），在变身前只是一个性格有些迷糊、成绩平平、喜欢恶作剧的普通初中生。她最大的爱好是吃甜食和看漫画。直到有一天，她意外救助了一只黑猫露娜，并被赋予了拯救宇宙的使命。在露娜的指引下，她变身为水手月亮，开始了与黑暗势力的战斗。
+                    </p>
+                    <p class="intro-text">
+                        虽然在战斗初期她常常因为鲁莽和缺乏经验而陷入困境，但在伙伴们的支持下，以及经历了无数次生离死别后，月野兔逐渐成长为一名真正的战士。她不仅学会了战斗技巧，更重要的是领悟了爱与正义的真谛。
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>关键变身咒语</h3>
+                    <p class="intro-text">月野兔的变身是整个系列的核心仪式，也是她力量的源泉。</p>
+                    <div style="background: #f0f0f0; padding: 15px; border-radius: 4px; text-align: center; font-family: 'Courier New', monospace; font-weight: bold; color: var(--deep-purple); margin-bottom: 15px;">
+                        月之冕冕者，水手月亮！
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-gray);">
+                        （Sailor Moon Power, Make Up!）<br>
+                        伴随着这句咒语，她举起权杖，将爱与正义的力量注入身体，化身为守护地球的战士。
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>主要能力与武器</h3>
+                    <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-gray);">
+                        <li><strong>月亮权杖：</strong>她的主要武器，用于施展各种魔法攻击和治愈。</li>
+                        <li><strong>月亮魔力：</strong>能够治愈伤痛、驱散黑暗，并拥有极高的精神力量。</li>
+                        <li><strong>月之冕冕者变身：</strong>赋予她超凡的速度、力量和防御力。</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section>
+                <h2 class="section-title">经典语录摘录</h2>
+                <div class="card" style="padding: 20px;">
+                    <ul class="quote-list">
+                        <li>
+                            <span class="quote-text">“我要代表月亮，消灭你们！”</span>
+                            <span class="quote-author">—— 经典登场台词</span>
+                        </li>
+                        <li>
+                            <span class="quote-text">“爱与正义，我一定会守护大家的！”</span>
+                            <span class="quote-author">—— 坚定信念</span>
+                        </li>
+                        <li>
+                            <span class="quote-text">“你说过，你会永远保护我的，对吧？”</span>
+                            <span class="quote-author">—— 对地场卫的情感</span>
+                        </li>
+                        <li>
+                            <span class="quote-text">“只要相信，奇迹就会发生。”</span>
+                            <span class="quote-author">—— 面对困难时</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>主要伙伴</h3>
+                <div class="character-grid">
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/sailormars/200/200" alt="水手火星" class="char-avatar">
+                        <div class="char-name">火野丽</div>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/sailormercury/200/200" alt="水手水星" class="char-avatar">
+                        <div class="char-name">水野亚美</div>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/sailorjupiter/200/200" alt="水手木星" class="char-avatar">
+                        <div class="char-name">木野真琴</div>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/sailorvenus/200/200" alt="水手金星" class="char-avatar">
+                        <div class="char-name">爱野美奈子</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>角色小知识</h3>
+                <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 10px;">
+                    月野兔的生日是6月30日，血型是A型。在原作漫画中，她的前世是月亮公主塞拉斯蒂亚，而地场卫（夜礼服假面）的前世则是地皇。两人的前世爱情故事贯穿了整部作品的情感主线。
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3>Sailor Moon Fan Zone</h3>
+            <div class="footer-links">
+                <a href="#">关于本站</a>
+                <a href="#">角色图鉴</a>
+                <a href="#">联系我们</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p class="copyright">
+                本站内容仅供粉丝交流与鉴赏，图片及版权归属原作者。所有内容均为原创或已获授权使用。<br>
+                Designed for Moon Fans.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
