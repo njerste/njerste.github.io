@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者荣耀S14-赛季深度解析与上分英雄推荐</title>
+    <meta name="description" content="王者荣耀S14赛季深度攻略，包含最新英雄调整、出装推荐、铭文搭配及实战技巧。提供S14赛季最强阵容推荐与排位上分指南。">
+    <meta name="keywords" content="王者荣耀S14,王者荣耀S14赛季,王者荣耀攻略,王者荣耀出装,王者荣耀铭文">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #f0b040;
+            --secondary-color: #2b2b2b;
+            --accent-color: #4facfe;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ffca3a;
+            transform: translateY(-2px);
+        }
+
+        /* 核心调整概览 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .changes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .change-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .change-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #eee;
+            color: #666;
+        }
+
+        .tag.boost { background: #e3f2fd; color: #1976d2; }
+        .tag.nerf { background: #ffebee; color: #c62828; }
+        .tag.meta { background: #fff3e0; color: #f57c00; }
+
+        .change-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 英雄推荐 */
+        .hero-recommend {
+            background-color: #fff;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .hero-card {
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-img-placeholder {
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .hero-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-info {
+            padding: 15px;
+        }
+
+        .hero-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .hero-role {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .hero-tags {
+            margin-top: 10px;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* 出装铭文 */
+        .builds-section {
+            background-color: var(--bg-color);
+            padding: 40px 0;
+        }
+
+        .build-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .build-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .build-list-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .build-name {
+            font-weight: bold;
+        }
+
+        .build-items {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .item-icon {
+            width: 24px;
+            height: 24px;
+            background: #eee;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #666;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #888;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .build-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>⚔️</span> 王者荣耀S14
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#changes">赛季调整</a>
+                <a href="#heroes">强势英雄</a>
+                <a href="#builds">出装铭文</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>王者荣耀S14赛季：峡谷平衡调整与上分指南</h1>
+                <p>新赛季版本更新已上线，野区经济重置，英雄强度发生显著变化。本文为您深度解析S14赛季核心改动，提供当前版本最实用的上分英雄与出装推荐。</p>
+                <a href="#heroes" class="btn">查看S14强势英雄</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 赛季核心调整 -->
+            <section id="changes">
+                <h2 class="section-title">S14赛季核心改动</h2>
+                <div class="changes-grid">
+                    <article class="change-card">
+                        <h3>野区经济机制 <span class="tag meta">机制</span></h3>
+                        <p>野区资源（红蓝Buff及野怪）的经济收益降低，野怪击杀时间延长。这迫使打野英雄更频繁地依赖线上Gank或入侵敌方野区来获取发育空间。</p>
+                    </article>
+                    <article class="change-card">
+                        <h3>英雄强度调整 <span class="tag boost">增强</span></h3>
+                        <p>部分游走辅助英雄（如张飞、孙膑）技能冷却缩减优化，增强了前期保护能力；部分战士英雄（如吕布、马超）基础属性提升，使其在前期对抗中更具优势。</p>
+                    </article>
+                    <article class="change-card">
+                        <h3>装备系统微调 <span class="tag meta">装备</span></h3>
+                        <p>防御类装备部分属性数值调整，冷却缩减类装备合成路径优化。物理与法术穿透装备的收益曲线发生微调，对后期英雄的爆发能力产生影响。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 英雄推荐 -->
+            <section id="heroes" class="hero-recommend">
+                <h2 class="section-title">S14赛季推荐上分英雄</h2>
+                <div class="hero-list">
+                    <!-- 英雄卡片 1 -->
+                    <article class="hero-card">
+                        <div class="hero-img-placeholder">
+                            <img src="https://picsum.photos/seed/wangzherongyao1/400/250" alt="马超">
+                        </div>
+                        <div class="hero-info">
+                            <h3>马超</h3>
+                            <div class="hero-role">刺客 / 赏金猎人</div>
+                            <div class="hero-tags">
+                                <span class="hero-tag">高机动</span>
+                                <span class="hero-tag">收割</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 英雄卡片 2 -->
+                    <article class="hero-card">
+                        <div class="hero-img-placeholder">
+                            <img src="https://picsum.photos/seed/wangzherongyao2/400/250" alt="貂蝉">
+                        </div>
+                        <div class="hero-info">
+                            <h3>貂蝉</h3>
+                            <div class="hero-role">法师 / 灵动</div>
+                            <div class="hero-tags">
+                                <span class="hero-tag">真伤</span>
+                                <span class="hero-tag">持续输出</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 英雄卡片 3 -->
+                    <article class="hero-card">
+                        <div class="hero-img-placeholder">
+                            <img src="https://picsum.photos/seed/wangzherongyao3/400/250" alt="曜">
+                        </div>
+                        <div class="hero-info">
+                            <h3>曜</h3>
+                            <div class="hero-role">战士 / 刺客</div>
+                            <div class="hero-tags">
+                                <span class="hero-tag">灵活</span>
+                                <span class="hero-tag">连招</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 英雄卡片 4 -->
+                    <article class="hero-card">
+                        <div class="hero-img-placeholder">
+                            <img src="https://picsum.photos/seed/wangzherongyao4/400/250" alt="鲁班七号">
+                        </div>
+                        <div class="hero-info">
+                            <h3>鲁班七号</h3>
+                            <div class="hero-role">射手 / 远程</div>
+                            <div class="hero-tags">
+                                <span class="hero-tag">高爆发</span>
+                                <span class="hero-tag">扫射</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 出装与铭文 -->
+            <section id="builds" class="builds-section">
+                <h2 class="section-title">S14热门出装与铭文</h2>
+                <div class="build-container">
+                    <div class="build-column">
+                        <h3>马超·影流之主</h3>
+                        <div class="build-list-item">
+                            <span class="build-name">核心出装</span>
+                            <div class="build-items">
+                                <div class="item-icon">铁剑</div>
+                                <div class="item-icon">铁剑</div>
+                                <div class="item-icon">铁剑</div>
+                            </div>
+                        </div>
+                        <div class="build-list-item">
+                            <span class="build-name">推荐铭文</span>
+                            <span class="tag meta">10无双 + 10鹰眼 + 10夺萃</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">S14赛季马超依赖高频拉枪，夺萃提供续航，无双提升暴击收益。</p>
+                    </div>
+
+                    <div class="build-column">
+                        <h3>貂蝉·落难仙女</h3>
+                        <div class="build-list-item">
+                            <span class="build-name">核心出装</span>
+                            <div class="build-items">
+                                <div class="item-icon">秘法之靴</div>
+                                <div class="item-icon">痛苦面具</div>
+                                <div class="item-icon">噬神之书</div>
+                            </div>
+                        </div>
+                        <div class="build-list-item">
+                            <span class="build-name">推荐铭文</span>
+                            <span class="tag meta">10梦魇 + 10心眼 + 10调和</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">半肉出装配合减CD，利用新版本机制在团战中持续打出真实伤害。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="faq-section">
+                <h2 class="section-title">S14常见问题 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">S14赛季何时开始？</div>
+                    <div class="faq-answer">S14赛季通常在游戏版本更新维护后开启，具体日期请关注游戏内公告。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">S14赛季皮肤返场吗？</div>
+                    <div class="faq-answer">赛季皮肤通常在赛季末开启兑换，S14赛季皮肤暂未公布，请以官方后续公告为准。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">野区改动对打野影响大吗？</div>
+                    <div class="faq-answer">影响较大。野怪经济降低意味着打野需要更早地入侵或依赖线上经济，节奏加快。</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>本页面仅供游戏攻略参考，内容基于S14赛季版本信息整理。</p>
+            <p>&copy; 2024 王者荣耀S14攻略站 | 非官方网站</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
