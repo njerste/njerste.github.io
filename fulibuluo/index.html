@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福利部落-每日福利精选与在线阅读指南</title>
+    <meta name="description" content="福利部落为您提供最新最全的福利资讯、精选资源下载及在线阅读指南。涵盖各类精选福利内容，每日更新，助您轻松获取优质资源。">
+    <meta name="keywords" content="福利部落,福利,资源下载,在线阅读,精选内容">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --primary-hover: #ff6b81;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #57606f;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section Styling */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            color: var(--secondary-color);
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #dfe4ea;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            background: rgba(255, 71, 87, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #a4b0be;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #f1f2f6;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: #dfe4ea;
+            color: var(--text-sub);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(-n+3) .rank-num {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .rank-score {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* Ad Placeholder */
+        .ad-banner {
+            width: 100%;
+            height: 250px;
+            background-color: #dfe4ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #747d8c;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f2f6;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ced6e0;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #57606f;
+            font-size: 14px;
+        }
+
+        /* Utility */
+        .badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        .badge-hot { background-color: #ffeaa7; color: #d35400; }
+        .badge-new { background-color: #55efc4; color: #00b894; }
+        .badge-vip { background-color: #a29bfe; color: #6c5ce7; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                福利<span>部落</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">每日精选</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">资源下载</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索资源...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>每日福利精选，快乐每一天</h1>
+            <p>我们致力于收集全网最优质的福利资讯、独家漫画资源与实用工具，为您提供一站式获取渠道。</p>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div class="content-col">
+                
+                <!-- Daily Updates -->
+                <section class="section-title">
+                    <h2>今日更新</h2>
+                    <a href="#" class="more-link">查看全部 &rarr;</a>
+                </section>
+                
+                <div class="card-grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/manga1/400/250" alt="漫画封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag badge-hot">热门</span>
+                            <h3 class="card-title">都市修仙：开局签到神级天赋</h3>
+                            <p class="card-desc">主角意外获得神秘系统，从此走上人生巅峰，精彩不断，爽文必读。</p>
+                            <div class="card-footer">
+                                <span>2023-10-24</span>
+                                <a href="#" class="btn btn-outline">阅读</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/soft1/400/250" alt="软件截图" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag badge-new">推荐</span>
+                            <h3 class="card-title">全能视频编辑器 Pro v4.0</h3>
+                            <p class="card-desc">专业级剪辑工具，支持4K导出，内置海量滤镜与音效，完全免费。</p>
+                            <div class="card-footer">
+                                <span>2023-10-24</span>
+                                <a href="#" class="btn btn-outline">下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/game1/400/250" alt="游戏截图" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag badge-vip">VIP</span>
+                            <h3 class="card-title">奇幻冒险：深渊之眼</h3>
+                            <p class="card-desc">最新版卡牌RPG手游，抽卡概率提升，全新副本现已开放。</p>
+                            <div class="card-footer">
+                                <span>2023-10-23</span>
+                                <a href="#" class="btn btn-outline">试玩</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/tool1/400/250" alt="工具界面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">实用</span>
+                            <h3 class="card-title">高清壁纸库 - 4K系列</h3>
+                            <p class="card-desc">整理了上千张4K超清壁纸，涵盖自然、科技、动漫等多种风格。</p>
+                            <div class="card-footer">
+                                <span>2023-10-23</span>
+                                <a href="#" class="btn btn-outline">获取</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Featured Section -->
+                <section class="section-title" style="margin-top: 40px;">
+                    <h2>精选专题</h2>
+                </section>
+                <div class="card-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/topic1/400/200" alt="专题封面" class="card-img" style="height: 120px;">
+                        <div class="card-body">
+                            <h3 class="card-title">秋季摄影技巧指南</h3>
+                            <p class="card-desc">如何利用光线拍出温暖的照片，包含构图与后期修图教程。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/topic2/400/200" alt="专题封面" class="card-img" style="height: 120px;">
+                        <div class="card-body">
+                            <h3 class="card-title">程序员效率工具集</h3>
+                            <p class="card-desc">提升编码效率的必备插件与开发环境配置推荐。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- FAQ Section -->
+                <section class="faq-section">
+                    <div class="section-title">
+                        <h2>常见问题 (FAQ)</h2>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">资源下载需要积分吗？</div>
+                        <div class="faq-answer">大部分基础资源完全免费，部分VIP专属资源可能需要积分或登录后下载。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取每日更新通知？</div>
+                        <div class="faq-answer">您可以关注我们的微信公众号“福利部落助手”，每日推送最新内容。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">分享的内容有版权问题吗？</div>
+                        <div class="faq-answer">本站所有资源均来源于网络或用户分享，仅供个人学习交流使用，请勿用于商业用途。</div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-col">
+                <!-- Ad Space -->
+                <div class="ad-banner">
+                    广告位：VIP会员尊享专区
+                </div>
+
+                <!-- Ranking List -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">本周热门排行</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <div class="rank-num">1</div>
+                            <div class="rank-info">
+                                <div class="rank-name">绝世高手在都市</div>
+                                <div class="rank-score">9.8 分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rank-num">2</div>
+                            <div class="rank-info">
+                                <div class="rank-name">赛博朋克2077攻略</div>
+                                <div class="rank-score">9.5 分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rank-num">3</div>
+                            <div class="rank-info">
+                                <div class="rank-name">极简生活收纳法</div>
+                                <div class="rank-score">9.2 分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rank-num">4</div>
+                            <div class="rank-info">
+                                <div class="rank-name">复古游戏机合集</div>
+                                <div class="rank-score">8.9 分</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rank-num">5</div>
+                            <div class="rank-info">
+                                <div class="rank-name">Python入门到精通</div>
+                                <div class="rank-score">8.7 分</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tags Cloud -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">热门标签</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">高清壁纸</a>
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">在线漫画</a>
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">软件工具</a>
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">游戏攻略</a>
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">设计素材</a>
+                        <a href="#" class="btn btn-outline" style="padding: 4px 10px; font-size: 12px;">影视解说</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">订阅福利</h3>
+                    <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 10px;">订阅我们的周刊，不错过任何好资源。</p>
+                    <input type="email" placeholder="您的邮箱地址" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #dfe4ea; border-radius: 6px;">
+                    <button class="btn" style="width: 100%;">立即订阅</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于福利部落</h3>
+                    <p style="font-size: 14px; color: #a4b0be; line-height: 1.8;">
+                        福利部落是一个专注于分享优质数字资源的社区平台。我们致力于为用户提供安全、快速、高清的资源下载服务，涵盖动漫、软件、游戏、设计等多个领域。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>资源分类</h3>
+                    <ul>
+                        <li><a href="#">漫画专区</a></li>
+                        <li><a href="#">软件下载</a></li>
+                        <li><a href="#">游戏攻略</a></li>
+                        <li><a href="#">设计素材</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">QQ交流群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 福利部落 版权所有. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
